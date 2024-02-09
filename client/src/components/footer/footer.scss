@@ -1,0 +1,29 @@
+@import "../../style.scss";
+.footer {
+  border-top: .1rem solid lightgray;
+  border-bottom: .1rem solid lightgray;
+  background-color: rgb(162, 180, 180);
+ height: 3rem;
+  color: black;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   @include sm{
+      display: none;
+   }
+   
+   .first{
+      img{
+        height: 3rem;
+        width: 4rem;
+        padding-top: .5rem;
+        
+      }
+   }
+   .second{
+
+   }
+   
+}

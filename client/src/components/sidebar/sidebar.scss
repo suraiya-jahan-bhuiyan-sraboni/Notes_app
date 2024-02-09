@@ -1,0 +1,158 @@
+@import "../../style.scss";
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  display: flex;
+  flex: 2;
+  top: 7rem;
+  height: 90vh;
+  flex-direction: column;
+  background-color: rgba(211, 211, 211, 0.144);
+  padding-top: 1rem;
+
+  @include sm {
+    top: 5rem;
+    width: 100vw;
+    z-index: 99999;
+    position: fixed;
+    transition: 1s;
+    background-color: white;
+    height: 100vh;    
+  }
+  @include md {
+  
+    padding-right: 2rem;
+    height: 92vh; 
+    
+  }
+  .side_btn {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0rem;
+    border: none;
+
+    @include sm {
+      display: block;
+      padding: 1.2rem 0.1rem;
+    }
+    .side_arrow {
+    }
+  }
+  .adding {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 0rem 2rem 2rem 2rem;
+    border-bottom: 0.1rem solid teal;
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
+    @include sm {
+    }
+    .add_div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex: 1;
+      @include sm {
+      }
+      .add {
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: teal;
+        border: 0.2rem solid teal;
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        position: fixed;
+        font-weight: bold;
+        @include sm {
+          font-size: 1rem;
+          display: none;
+        }
+        @include md {
+          font-size: 1rem;
+          z-index: 99999;
+        }
+        &:hover {
+          background-color: rgb(229, 236, 232);
+        }
+      }
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      flex: 2;
+      gap: 1rem;
+      border: 0.1rem solid teal;
+      border-radius: 0.5rem;
+      -webkit-border-radius: 0.5rem;
+      -moz-border-radius: 0.5rem;
+      -ms-border-radius: 0.5rem;
+      -o-border-radius: 0.5rem;
+      padding: 0.5rem;
+      input {
+        border: none;
+        outline: none;
+        background-color: inherit;
+        @include sm{
+          width: 28rem;
+        }
+      }
+    }
+  }
+  .container {
+    padding: 2rem;
+    height: 59rem;
+    overflow-y: scroll;
+    @include sm {
+      height: 90rem;
+      overflow-y: scroll;
+    }
+    @include md {
+      height:90vh;
+      overflow-y: scroll;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      @include sm {
+      }
+      .link {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 2rem 1rem;
+        border-radius: 0.5rem;
+        background-color: rgba(211, 211, 211, 0.336);
+        @include sm {
+          background-color: rgba(128, 128, 128, 0.363);
+        }
+        cursor: pointer;
+        .title {
+          color: teal;
+        }
+        .description {
+          color: rgb(87, 86, 86);
+          height: 1.3rem;
+          overflow: hidden;
+          padding: 1rem 0rem 1rem 1rem;
+        }
+      }
+
+      span {
+        font-size: 1.8rem;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

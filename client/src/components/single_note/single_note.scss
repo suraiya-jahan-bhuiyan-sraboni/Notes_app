@@ -1,0 +1,77 @@
+@import "../../style.scss";
+
+.single_note{
+    padding: 2rem 5rem;
+    position: relative;
+    border: .1rem solid #638E8E;
+    margin: 2rem 2rem 0rem 0rem ;
+    border-radius: .5rem;
+    height: 84vh;
+    @include sm{
+        font-size: .5rem;
+        margin: 0;
+        padding: 1rem;
+        top: 5rem;
+        left: 3rem;
+        height: 93vh;
+        width: 86vw;
+    }
+    @include md{
+        height: 90vh;
+        
+    }
+    .note_container{
+        height: 100%;
+        width: 100%;
+
+
+        .title{
+            padding-bottom: 2rem;
+            @include sm{
+                padding-bottom: 1rem;
+            }
+        }
+        .description{
+            font-size: 1.6rem;
+            padding-left: 4rem;
+
+            @include sm{
+                padding-left: .5rem;
+                font-size: 1rem;
+            }
+            
+        }
+    }
+
+    .edit{
+       position: fixed;
+       right:4rem;
+       bottom:12rem;
+       padding: 1.2rem;
+       border-radius: 1rem;
+       border: .2rem solid teal;
+       text-decoration: none;
+       color: teal;
+       background-color: white;
+       
+       @include sm{
+        bottom: 15rem;
+       }
+       
+    }
+    .dlt{
+        position: fixed;
+        right:4rem;
+        bottom:6rem;
+        padding: 1.2rem;
+        border-radius: 1rem;
+        border: .2rem solid red;
+        text-decoration: none;
+        color: red;
+        background-color: white;
+        cursor: pointer;
+        @include sm{
+            bottom: 9rem;
+           }
+    }
+}

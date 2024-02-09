@@ -1,0 +1,53 @@
+@import "../../style.scss";
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+    font-size: 3rem;
+     flex-direction: column;
+     color: gray;
+     gap: 4rem;
+     position: relative;
+     height:100%;
+     @include sm{
+      font-size: 1rem;
+      padding-top:10rem;
+      height: 100vh;
+     }
+     @include md{
+      font-size: 3rem;
+     }
+
+      .text{
+        @include md{
+          font-size: 2rem;
+         
+         }
+      }
+
+
+    .image{
+    
+    }
+
+    .note_add{
+      display: none;
+
+      
+      @include sm{
+        display: block;
+        position: absolute;
+        border: 3px solid teal;
+        border-radius:10px;
+        bottom: 3rem;
+        right: 3rem;
+      }
+
+      .add_icon{
+        font-size: 5rem;
+        color: teal;
+      }
+    }
+
+}
