@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
 import "./write.scss";
+import { AuthContext } from "../../context/authContext";
 
 const Write = () => {
   const state = useLocation().state;
   const [title, setTitle] = useState(state?.title || "");
   const [value, setValue] = useState(state?.desc || "");
+  const { fetchData } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // const handleClick = async (e) => {
@@ -47,8 +49,8 @@ const Write = () => {
       },
       { withCredentials: true }
     );
-
     navigate(`/single-note/${state.id}`);
+    fetchData();
   };
 
   const handleSave = async (e) => {
@@ -63,8 +65,8 @@ const Write = () => {
       },
       { withCredentials: true }
     );
-
     navigate("/");
+    fetchData();
   };
 
   return (

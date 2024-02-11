@@ -1,13 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import DOMPurify from "dompurify";
 import "./single_note.scss";
+import { AuthContext } from "../../context/authContext";
+
 const SingleNote = () => {
   const [note, setNote] = useState({});
-
+  const {fetchData} = useContext(AuthContext);
   const Navigate = useNavigate();
   const location = useLocation();
 
@@ -37,6 +39,7 @@ const SingleNote = () => {
     } catch (err) {
       console.log(err);
     }
+    fetchData()
   };
 
   const getText = (html) => {
