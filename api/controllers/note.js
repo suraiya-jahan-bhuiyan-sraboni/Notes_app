@@ -7,7 +7,7 @@ export const getNotes = (req, res) => {
   const token = req.cookies.accessToken;
 
   if (!token) {
-    return res.status(401).json({ message: "unauthorize toker not provided" });
+    return res.status(401).json({ message: "unauthorize token not provided" });
   }
 
   try {
@@ -24,8 +24,11 @@ export const getNotes = (req, res) => {
     return res.status(401).json({ message: "unautorize invalid token" });
   }
 };
+
 //get single note
 export const getNote = (req, res) => {
+ 
+  
   const q =
     "SELECT n.id,`title`, `desc`,`date` FROM users u JOIN note n ON u.id = n.uid WHERE n.id = ? ";
 
