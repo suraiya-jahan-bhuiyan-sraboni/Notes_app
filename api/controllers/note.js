@@ -1,5 +1,7 @@
 import { db } from "../db.js";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv"
+dotenv.config()
 
 //get all notes
 export const getNotes = (req, res) => {
@@ -11,7 +13,7 @@ export const getNotes = (req, res) => {
   }
 
   try {
-    const decoded = jwt.verify(token, "jwtkey");
+    const decoded = jwt.verify(token, process.env.JWT);
     const userId = decoded.id;
     const q = "SELECT * FROM note WHERE note.uid=?";
 
@@ -44,7 +46,7 @@ export const addNote = (req, res) => {
 
   if (!token) return res.status(401).json("Not authenticated!");
 
-  jwt.verify(token, "jwtkey", (err, userInfo) => {
+  jwt.verify(token, process.env.JWT, (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
     const q = "INSERT INTO note(`title`, `desc`,`date`,`uid`) VALUES (?)";
@@ -63,7 +65,7 @@ export const deleteNote = (req, res) => {
 
   if (!token) return res.status(401).json("Not authenticated!");
 
-  jwt.verify(token, "jwtkey", (err, userInfo) => {
+  jwt.verify(token, process.env.JWT, (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
     const noteId = req.params.id;
@@ -81,7 +83,7 @@ export const updateNote = (req, res) => {
   const token = req.cookies.accessToken;
   if (!token) return res.status(401).json("Not authenticated!");
 
-  jwt.verify(token, "jwtkey", (err, userInfo) => {
+  jwt.verify(token, process.env.JWT, (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
     const postId = req.params.id;
