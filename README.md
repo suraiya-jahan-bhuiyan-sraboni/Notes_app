@@ -1,4 +1,4 @@
-This is simple note taking app using react
+This is simple note taking app using react and nodejs 
 ![localhost_5173_single-note_101(iPad) (4)](https://github.com/Farabiislam/Notes/assets/70443624/25ec261a-432d-45ea-90f3-e44000d70238)
 ![localhost_5173_single-note_101(iPad) (3)](https://github.com/Farabiislam/Notes/assets/70443624/222f6645-68a7-4ef4-bf82-da63fa984cd9)
 ![localhost_5173_single-note_101(iPad)](https://github.com/Farabiislam/Notes/assets/70443624/93811035-74f0-4a96-9168-4db4956cd96f)
